@@ -1,0 +1,19 @@
+# Function to get input
+def get_input():
+    return input("Enter a line of comma-separated values: ")
+
+# Function to parse and clean values
+def parse_values(csv_line):
+    items = csv_line.split(',')
+    cleaned_items = [item.strip() for item in items]  # Remove leading/trailing spaces
+    return cleaned_items
+
+# Function to display output
+def display_output(items):
+    for item in items:
+        print(item)
+
+# Main Program
+csv_line = get_input()
+parsed_items = parse_values(csv_line)
+display_output(parsed_items)
