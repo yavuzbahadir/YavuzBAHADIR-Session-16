@@ -1,0 +1,20 @@
+# Function to get input
+def get_input():
+    return input("Enter a single line containing a first name and last name: ").strip()
+
+# Function to process the name
+def process_name(full_name):
+    parts = full_name.split()
+    if len(parts) != 2:
+        return "Error: Invalid input. Please enter exactly one first name and one last name."
+    first_name, last_name = parts
+    return f"{last_name}, {first_name[0]}."
+
+# Function to display output
+def display_output(result):
+    print(result)
+
+# Main Program
+name = get_input()
+formatted_name = process_name(name)
+display_output(formatted_name)
