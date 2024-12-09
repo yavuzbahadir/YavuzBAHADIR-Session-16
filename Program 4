@@ -1,0 +1,32 @@
+# Function to get input
+def get_input():
+    text = input("Enter a line of text: ")
+    chars_per_line = int(input("Enter the number of characters per line: "))
+    num_lines = int(input("Enter the number of lines to print: "))
+    direction = input("Enter scroll direction (left or right): ").lower()
+    return text, chars_per_line, num_lines, direction
+
+# Function to process scrolling text
+def process_text(text, chars_per_line, num_lines, direction):
+    # Duplicate text to ensure enough characters
+    while len(text) < chars_per_line:
+        text += text
+    text = text[:chars_per_line]
+    results = []
+    for _ in range(num_lines):
+        results.append(text)
+        if direction == "left":
+            text = text[1:] + text[0]  # Shift left
+        elif direction == "right":
+            text = text[-1] + text[:-1]  # Shift right
+    return results
+
+# Function to display output
+def display_output(lines):
+    for line in lines:
+        print(line)
+
+# Main Program
+text, chars_per_line, num_lines, direction = get_input()
+processed_lines = process_text(text, chars_per_line, num_lines, direction)
+display_output(processed_lines)
