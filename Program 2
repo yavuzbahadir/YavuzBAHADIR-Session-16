@@ -1,0 +1,18 @@
+# Function to get input
+def get_input():
+    return input("Enter a line of text with extra spaces: ")
+
+# Function to clean and reverse text
+def process_text(line):
+    cleaned_line = ' '.join(line.split())  # Remove leading, trailing, and duplicate spaces
+    reversed_line = cleaned_line[::-1]
+    return reversed_line
+
+# Function to display output
+def display_output(result):
+    print(result)
+
+# Main Program
+line = get_input()
+processed_line = process_text(line)
+display_output(processed_line)
